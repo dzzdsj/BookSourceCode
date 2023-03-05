@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch3;
 
 /**
  * ThisEscape
@@ -7,6 +7,7 @@ package net.jcip.examples;
  *
  * @author Brian Goetz and Tim Peierls
  */
+//发布对象时，其内部的对象也会随之发布
 public class ThisEscape {
     public ThisEscape(EventSource source) {
         source.registerListener(new EventListener() {

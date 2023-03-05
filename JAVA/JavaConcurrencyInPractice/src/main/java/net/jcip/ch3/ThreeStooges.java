@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch3;
 
 import java.util.*;
 
@@ -15,7 +15,7 @@ import net.jcip.annotations.*;
 @Immutable
  public final class ThreeStooges {
     private final Set<String> stooges = new HashSet<String>();
-
+//    尽管set对象是可变的，但在构造函数完成后就无法对其进行修改
     public ThreeStooges() {
         stooges.add("Moe");
         stooges.add("Larry");

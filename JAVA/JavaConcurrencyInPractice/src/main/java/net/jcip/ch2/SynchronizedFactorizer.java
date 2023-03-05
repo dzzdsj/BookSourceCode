@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch2;
 
 import java.math.BigInteger;
 import javax.servlet.*;
@@ -17,7 +17,7 @@ import net.jcip.annotations.*;
 public class SynchronizedFactorizer extends GenericServlet implements Servlet {
     @GuardedBy("this") private BigInteger lastNumber;
     @GuardedBy("this") private BigInteger[] lastFactors;
-
+    //对整个方法体添加了同步锁，性能不好
     public synchronized void service(ServletRequest req,
                                      ServletResponse resp) {
         BigInteger i = extractFromRequest(req);

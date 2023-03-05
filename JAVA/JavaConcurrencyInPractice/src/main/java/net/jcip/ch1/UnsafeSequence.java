@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch1;
 
 import net.jcip.annotations.*;
 
@@ -15,6 +15,7 @@ public class UnsafeSequence {
     /**
      * Returns a unique value.
      */
+    //value++ 自增操作非线程安全
     public int getNext() {
         return value++;
     }

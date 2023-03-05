@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch2;
 
 import net.jcip.annotations.*;
 
@@ -15,6 +15,7 @@ public class LazyInitRace {
     private ExpensiveObject instance = null;
 
     public ExpensiveObject getInstance() {
+        //典型竞态条件：先检查-后执行
         if (instance == null)
             instance = new ExpensiveObject();
         return instance;

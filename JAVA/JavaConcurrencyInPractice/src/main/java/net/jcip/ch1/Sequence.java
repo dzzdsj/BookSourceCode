@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch1;
 
 import net.jcip.annotations.*;
 

@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch3;
 
 /**
  * NoVisibility
@@ -20,9 +20,10 @@ public class NoVisibility {
         }
     }
 
+    //无法保证main线程写入内存的值对读线程readerthread是可见的
     public static void main(String[] args) {
         new ReaderThread().start();
-        number = 42;
+         number = 42;
         ready = true;
     }
 }

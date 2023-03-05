@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch2;
 
 import java.math.BigInteger;
 import javax.servlet.*;
@@ -12,6 +12,8 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
+//获取与释放锁也会有开销，在尽量短的代码段添加同步，同时也不能拆分的太细
+//执行需要长时间的操作时，一定不要持有锁
 @ThreadSafe
 public class CachedFactorizer extends GenericServlet implements Servlet {
     @GuardedBy("this") private BigInteger lastNumber;

@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch3;
 
 import net.jcip.annotations.*;
 
@@ -13,7 +13,7 @@ import net.jcip.annotations.*;
 @NotThreadSafe
 public class MutableInteger {
     private int value;
-
+//由于读写未加同步，读线程可能得到的是一个失效（过去的）的值
     public int get() {
         return value;
     }
