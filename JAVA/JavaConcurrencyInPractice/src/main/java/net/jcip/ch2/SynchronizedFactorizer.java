@@ -12,9 +12,10 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-
+//如果使用同步来协调对某个变量的访问，那么在访问这个变量的所有地方（而不仅仅是写入时），都要使用同步，且必须是同一把锁。
 @ThreadSafe
 public class SynchronizedFactorizer extends GenericServlet implements Servlet {
+//    注意：这两个内置状态变量需要由同一个锁保护。在这里是SynchronizedFactorizer对象的内置锁。
     @GuardedBy("this") private BigInteger lastNumber;
     @GuardedBy("this") private BigInteger[] lastFactors;
     //对整个方法体添加了同步锁，性能不好

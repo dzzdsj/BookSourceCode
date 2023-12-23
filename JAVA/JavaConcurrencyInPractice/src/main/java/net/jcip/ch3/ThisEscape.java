@@ -7,9 +7,11 @@ package net.jcip.ch3;
  *
  * @author Brian Goetz and Tim Peierls
  */
-//发布对象时，其内部的对象也会随之发布
+//发布内部类的实例时，也隐含地发布了外部类实例
 public class ThisEscape {
     public ThisEscape(EventSource source) {
+//        不要在构造过程中使this引用逸出（有可能发布一个构造未完成的对象）
+//        仅当对象的构造函数返回时，对象才处于可预测和一致的状态
         source.registerListener(new EventListener() {
             public void onEvent(Event e) {
                 doSomething(e);

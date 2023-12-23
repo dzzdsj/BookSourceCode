@@ -18,7 +18,8 @@ public class Animals {
         SortedSet<Animal> animals;
         int numPairs = 0;
         Animal candidate = null;
-
+//animals对象的引用被封闭在局部变量中，因此也被封闭在执行线程中
+//但如果不小心发布了animals对象的引用，那么封闭性就被破坏了
         // animals confined to method, don't let them escape!
         animals = new TreeSet<Animal>(new SpeciesGenderComparator());
         animals.addAll(candidates);

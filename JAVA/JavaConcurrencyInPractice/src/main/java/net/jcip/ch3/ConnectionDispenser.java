@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package net.jcip.ch3;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ import java.sql.SQLException;
  */
 public class ConnectionDispenser {
     static String DB_URL = "jdbc:mysql://localhost/mydatabase";
-
+//通过ThreadLocal,每个使用该类型变量的线程，都保存一份独立的副本
     private ThreadLocal<Connection> connectionHolder
             = new ThreadLocal<Connection>() {
                 public Connection initialValue() {

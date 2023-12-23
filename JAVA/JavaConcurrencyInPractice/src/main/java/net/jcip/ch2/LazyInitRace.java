@@ -13,7 +13,7 @@ import net.jcip.annotations.*;
 @NotThreadSafe
 public class LazyInitRace {
     private ExpensiveObject instance = null;
-
+//存在竞态条件：先检查-后执行
     public ExpensiveObject getInstance() {
         //典型竞态条件：先检查-后执行
         if (instance == null)

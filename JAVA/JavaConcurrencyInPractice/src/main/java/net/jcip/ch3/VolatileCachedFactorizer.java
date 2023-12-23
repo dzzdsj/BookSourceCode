@@ -1,9 +1,10 @@
-package net.jcip.examples;
+package net.jcip.ch3;
 
 import java.math.BigInteger;
 import javax.servlet.*;
 
 import net.jcip.annotations.*;
+import net.jcip.ch3.OneValueCache;
 
 /**
  * VolatileCachedFactorizer

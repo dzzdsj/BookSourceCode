@@ -12,7 +12,8 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-//由于使用了count++
+//在无状态对象中增加一个可变状态count
+//count++ 看似紧凑，却不是原子操作。实际包含了三个独立的操作：读取-修改-写入。且其结果状态依赖于其之前的状态
 @NotThreadSafe
 public class UnsafeCountingFactorizer extends GenericServlet implements Servlet {
     private long count = 0;

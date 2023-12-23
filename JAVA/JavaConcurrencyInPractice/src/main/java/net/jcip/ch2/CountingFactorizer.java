@@ -15,7 +15,7 @@ import net.jcip.annotations.*;
  */
 @ThreadSafe
 public class CountingFactorizer extends GenericServlet implements Servlet {
-    //AtomicLong 在无状态的类中添加 一个 状态时，如果该状态完全由线程安全的对象来管理，这个类仍然是线程安全的
+    //AtomicLong 在无状态的类中添加**一个**状态时，如果该状态完全由线程安全的对象来管理，这个类仍然是线程安全的
     private final AtomicLong count = new AtomicLong(0);
 
     public long getCount() { return count.get(); }

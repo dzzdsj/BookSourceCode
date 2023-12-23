@@ -12,7 +12,7 @@ import net.jcip.annotations.*;
  * 
  * @author Brian Goetz and Tim Peierls
  */
-//无状态的对象一定是线程安全的
+//无状态的对象一定是线程安全的（无实例变量）
 @ThreadSafe
 public class StatelessFactorizer extends GenericServlet implements Servlet {
 
